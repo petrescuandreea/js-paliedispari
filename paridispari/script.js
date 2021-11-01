@@ -18,9 +18,16 @@ console.log("L'utente ha scommesso sul risultato e secondo lui uscirà: " , bet)
 
 
 // 2. chiedo all'utente di inserire un numero tra 1-5 ->prompt
-const userNumber = parseInt(prompt("Inserisci un numero tra 1 e 5"));
+let userNumber = parseInt(prompt("Inserisci un numero tra 1 e 5"));
 console.log("Il numero inserito dall'utente è: " , userNumber);
 
+// controllo sul prompt 
+while (userNumber < 1 || userNumber > 5) {
+    alert ("Il numero inserito non è valido. Devi inserire uno dei seguenti: 1, 2, 3, 4, 5");
+    userNumber = parseInt(prompt("Inserisci un numero tra 1 e 5"));
+    console.log("Il numero inserito dall'utente è: " , userNumber);
+
+}
 
 // 3. genero un numero random per il computer tra 1-5
 // 3.1 creo la funzione
@@ -42,17 +49,17 @@ console.log("La somma è:" , sum);
 
 // 5. verifico se la somma sia pari o dispari e salvo il risultato
 // 5.1 creo una variabile per salvare il risultato
-let risult;
+let result;
 // 5.2 creo la funzione 
 function checkPariDispari(sum) {
 
     if(sum % 2 === 0) {
-        risult = "La somma è: pari";
+        result = "La somma è: pari";
     } else {
-        risult = "La somma è: dispari";
+        result = "La somma è: dispari";
     }
 
-    return risult;
+    return result;
 }
 
 // 5.3 invoco la funzione e la associo ad una variabile 
@@ -61,7 +68,7 @@ console.log(functionResult);
 
 
 // 6. confronto il risultato con ciò che ha scommesso l'utente e stampo l'output -> if
-if(risult === bet) {
+if(result === bet) {
     gameWinner.innerHTML = "Ha vinto l'utente";
 } else {
     gameWinner.innerHTML = "Ha vinto il pc";
