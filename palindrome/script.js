@@ -36,7 +36,7 @@ function checkPalindromeWord (wordString) {
 
 // invoco la funzione e la associo ad una variabile 
 
-let polindromeWord = checkPalindromeWord(userWord);
+let palindromeWord = checkPalindromeWord(userWord);
 console.log(polindromeWord);
 
 
